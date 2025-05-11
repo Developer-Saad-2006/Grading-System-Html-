@@ -1,1 +1,58 @@
 # Grading-System-Html-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grading System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        input {
+            padding: 10px;
+            margin: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Student Grading System</h2>
+    <label for="marks">Enter Marks:</label>
+    <input type="number" id="marks" placeholder="Enter your marks" required>
+    <button onclick="calculateGrade()">Get Grade</button>
+    <div id="result"></div>
+
+    <script>
+        function calculateGrade() {
+            let marks = document.getElementById("marks").value;
+            let grade;
+
+            if (marks >= 90) {
+                grade = "A+";
+            } else if (marks >= 80) {
+                grade = "A";
+            } else if (marks >= 70) {
+                grade = "B";
+            } else if (marks >= 60) {
+                grade = "C";
+            } else if (marks >= 50) {
+                grade = "D";
+            } else {
+                grade = "F";
+            }
+
+            document.getElementById("result").innerHTML = "Your Grade: " + grade;
+        }
+    </script>
+</body>
+</html>
